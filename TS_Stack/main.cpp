@@ -18,15 +18,15 @@ int main()
     for (int i = 0; i < 100; ++i)
     {
         threads.push_back(thread([&]()
-         {
-             ss.push(A());
-             ss.pop();
-             m.lock();
-             std::cout<<"pushed"<<std::endl;
-             std::cout<<"size ";
-             m.unlock();
-             std::cout<<ss.size();
-         }));
+             {
+                 ss.push(A());
+                 ss.pop();
+                 m.lock();
+                 std::cout<<"pushed"<<std::endl;
+                 std::cout<<"size ";
+                 m.unlock();
+                 std::cout<<ss.size();
+             }));
     }
 
     for (auto &thread : threads)

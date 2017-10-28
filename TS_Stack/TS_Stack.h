@@ -1,3 +1,6 @@
+#ifndef _TS_STACK_H
+#define _TS_STACK_H
+
 #include <stack>
 #include <exception>
 #include <mutex>
@@ -31,7 +34,7 @@ public:
     }
 
     //返回保护数据的引用 不安全
-    TS_Stack &operator =(const TS_Stack &otherStack) = delete;
+    TS_Stack &operator =(const TS_Stack &) = delete;
 
     //移动语义的push
     void push(const T &&element){
@@ -78,3 +81,5 @@ public:
     }
 
 };
+
+#endif
